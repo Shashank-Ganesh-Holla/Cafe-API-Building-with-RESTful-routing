@@ -42,6 +42,7 @@ class Cafe(db.Model):
 def home():
     if not os.path.exists("cafes.db"):
         db.create_all()
+        db.session.commit()
     return render_template("index.html")
 
 
